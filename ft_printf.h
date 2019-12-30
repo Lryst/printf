@@ -47,7 +47,4 @@ void	ft_putnbr_hexa_maj(unsigned long int n, int *count_char);
 char	*ft_itoa(int nb);
 //size_t	digit_count(long nb, int base);
 
-
-char	*ft_strcpy(char *dst, const char *src);
-
 #endif
