@@ -88,6 +88,4 @@ void	ft_flag_right_space(const char *str, int *i, va_list args, int *count_char)
 			n++;
 		}
 	}
-    //printf("%s\n", ft_parse_after_moins(str, i, args, count_char));
-    //ft_prefix_int(nbr, ' ', ft_parse_after_moins(str, i, args, count_char), count_char);
 }

@@ -13,28 +13,7 @@ void    ft_parse(const char *str, int *i, va_list args, int *count_char)
     str[*i] == 'c' ? ft_putchar_c(va_arg(args, int), count_char) : 0;
 	str[*i] == '-' ? ft_flag_right_space(str, i, args, count_char) : 0;
 	//str[*i] == '*' ? ft_flag_arg(str, i, args, count_char) : 0;
-	//str[*i] == '.' ? ft_flag_precision(str, i, args, count_char) : 0;
-	//str[*i] == '0' ? ft_flag_left_zero(str, i, args, count_char) : 0;
-    //str[*i] > '0' && str[*i] <= '9' ? ft_min_print(str, i, args, count_char) : 0;
-}
-
-void	ft_parse_after_moins(const char *str, int *i, va_list args, int *count_char)
-{
-	char	*ret;
-	char	q;
-	
-	*i = *i + 1;
-    str[*i] == 'u' ? ft_putnbru(va_arg(args, unsigned long int), count_char) : 0;
-    str[*i] == 'x' ? ft_putnbr_hexa(va_arg(args, unsigned long int), count_char) : 0;
-    str[*i] == 'X' ? ft_putnbr_hexa_maj(va_arg(args, unsigned long int), count_char) : 0;
-    str[*i] == 'p' ? ft_adres(va_arg(args, unsigned long int), count_char) : 0;
-    str[*i] == 's' ? ft_putstr_c(va_arg(args, char*), count_char) : 0;
-    str[*i] == 'c' ? ft_putchar_c(va_arg(args, int), count_char) : 0;
-	
-	/*if (str[*i] == 'c')
-	{
-		q = va_arg(args, int);
-		return(&q);
-	}
-	*count_char = *count_char + ft_strlen(ret);*/
+	str[*i] == '.' ? ft_flag_left_zero(str, i, args, count_char) : 0;
+	str[*i] == '0' ? ft_flag_zero(str, i, args, count_char) : 0;
+    str[*i] > '0' && str[*i] <= '9' ? ft_flags_left_space(str, i, args, count_char) : 0;
 }

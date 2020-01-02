@@ -11,6 +11,9 @@ int		ft_printf(const char *list, ...);
 //void	ft_flag_arg(const char *str, int *i, va_list args, int *count_char);
 //void	ft_flag_precision(const char *str, int *i, va_list args, int *count_char);
 void	ft_flag_right_space(const char *str, int *i, va_list args, int *count_char);
+void	ft_flag_left_zero(const char *str, int *i, va_list args, int *count_char);
+void	ft_flag_zero(const char *str, int *i, va_list args, int *count_char);
+void    ft_flags_left_space(const char *str, int *i, va_list args, int *count_char);
 
 void    ft_flags_prefix(int nbr, char type, char *str, int *count_char);
 //void	ft_flags_suffix(int nbr, char type, char *str, int *count_char);
@@ -36,6 +39,7 @@ void    ft_adres(unsigned long int nb, int *count_char);
 int		ft_strlen(char *str);
 int		ft_unsigned_len(unsigned int nb);
 int		ft_intlen(int nb);
+int		ft_hexa_len(unsigned long int nb);
 
 void	ft_putnbr_hexa(unsigned long int n, int *count_char);
 void    ft_putnbrdi(int n, int *count_char);

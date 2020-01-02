@@ -30,7 +30,7 @@ int        ft_strlen(char *str)
 
 int		ft_unsigned_len(unsigned int nb)
 {
-	int		len;
+	unsigned long int		len;
 
 	len = 0;
 	if (nb < 0)
@@ -41,6 +41,24 @@ int		ft_unsigned_len(unsigned int nb)
 	while (nb > 0)
 	{
 		nb = nb / 10;
+		len++;
+	}
+	return (len);
+}
+
+int		ft_hexa_len(unsigned long int nb)
+{
+	unsigned long int		len;
+
+	len = 0;
+	if (nb < 0)
+	{
+		nb = nb * -1;
+		len++;
+	}
+	while (nb > 0)
+	{
+		nb = nb / 16;
 		len++;
 	}
 	return (len);
