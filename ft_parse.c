@@ -12,8 +12,9 @@ void    ft_parse(const char *str, int *i, va_list args, int *count_char)
     str[*i] == 's' ? ft_putstr_c(va_arg(args, char*), count_char) : 0;
     str[*i] == 'c' ? ft_putchar_c(va_arg(args, int), count_char) : 0;
 	str[*i] == '-' ? ft_flag_right_space(str, i, args, count_char) : 0;
-	//str[*i] == '*' ? ft_flag_arg(str, i, args, count_char) : 0;
+	str[*i] == '*' ? ft_flag_stars(str, i, args, count_char) : 0;
 	str[*i] == '.' ? ft_flag_left_zero(str, i, args, count_char) : 0;
 	str[*i] == '0' ? ft_flag_zero(str, i, args, count_char) : 0;
     str[*i] > '0' && str[*i] <= '9' ? ft_flags_left_space(str, i, args, count_char) : 0;
+    str[*i] == '%' ? ft_putchar_c('%', count_char) : 0;
 }

@@ -2,7 +2,7 @@
 
 int main()
 {
-    char *line;
+    /*char *line;
 
 	printf("%s", "\n\n****************************  CONV. NORMALES  ******************************\n\n");
     //printf("MY res %d\n", ft_printf("%d\n", 123));
@@ -46,10 +46,12 @@ int main()
 	printf("MY res %d\n", ft_printf(".%.6x.\n", 890));
 	printf("REEL %d\n\n", printf(".%.6x.\n", 890));
 	printf("MY res %d\n", ft_printf(".%.18X.\n", 890));
-	printf("REEL %d\n\n", printf(".%.18X.\n", 890));
-	printf("MY res %d\n", ft_printf(".%.4s.\n", "coucou"));
-	printf("REEL %d\n\n", printf(".%.4s.\n", "coucou"));
-	printf("%s", "\n\n*****************************   FLAGS ZERO ***************************\n\n");
+	printf("REEL %d\n\n", printf(".%.18X.\n", 890));*/
+	printf("MY res %d\n", ft_printf(".%.60s.\n", "coucou hibout coucou hibout !"));
+	printf("REEL %d\n\n", printf(".%.60s.\n", "coucou hibout coucou hibout !"));
+	printf("MY res %d\n", ft_printf(".%.4s.\n", "bonsoir"));
+	printf("REEL %d\n\n", printf(".%.4s.\n", "bonsoir"));
+	/*printf("%s", "\n\n*****************************   FLAGS ZERO ***************************\n\n");
 	printf("MY res %d\n", ft_printf(".%04d.\n", 42));
 	printf("REEL %d\n\n", printf(".%04d.\n", 42));
 	printf("MY res %d\n", ft_printf(".%04i.\n", 42));
@@ -77,9 +79,41 @@ int main()
 	printf("REEL %d\n\n", printf(".%17X.\n", 42));
 	printf("MY res %d\n", ft_printf(".%6i.\n", 42));
 	printf("REEL %d\n\n", printf(".%6i.\n", 42));
-	//printf("MY res %d\n", ft_printf(".%.180s.\n", "coucou"));
-	//printf("REEL %d\n\n", printf(".%.180s.\n", "coucou"));
-    //printf("MY res %d\n", ft_printf("%d\n%i\n%u\n%x\n%X\n%p\n%s\n%c\n", 123, 321, 2147483650, 4569695, 4569695, &line, "bonjour les copains", 'c'));
-    //printf("REEL %d\n", printf("%d\n%i\n%ld\n%x\n%X\n%p\n%s\n%c\n", 123, 321, 2147483650, 4569695, 4569695, &line, "bonjour les copains", 'c'));
+	printf("MY res %d\n", ft_printf(".%*s.\n", 10,"coucou"));
+	printf("REEL %d\n\n", printf(".%*s.\n", 10,"coucou"));
+	printf("MY res %d\n", ft_printf(".%*c.\n", 5,'c'));
+	printf("REEL %d\n\n", printf(".%*c.\n", 5,'c'));
+	printf("MY res %d\n", ft_printf(".%*p.\n", 17,&line));
+	printf("REEL %d\n\n", printf(".%*p.\n", 17,&line));
+	printf("MY res %d\n", ft_printf(".%*d.\n", 5,42));
+	printf("REEL %d\n\n", printf(".%*d.\n", 5,42));
+	printf("MY res %d\n", ft_printf(".%*x.\n", 17,42));
+	printf("REEL %d\n\n", printf(".%*x.\n", 17,42));
+	printf("MY res %d\n", ft_printf(".%*X.\n", 17,42));
+	printf("REEL %d\n\n", printf(".%*X.\n", 17,42));
+	printf("MY res %d\n", ft_printf(".%*i.\n", 6, 42));
+	printf("REEL %d\n\n", printf(".%*i.\n", 6, 42));
+	printf("%s", "\n\n*****************************   FLAGS STARS ***************************\n\n");
+	printf("MY res %d\n", ft_printf(".%*s.\n", 2, "coucou"));
+	printf("REEL %d\n\n", printf(".%*s.\n", 2, "coucou"));
+	printf("MY res %d\n", ft_printf(".%*d.\n", 4, 42));
+	printf("REEL %d\n\n", printf(".%*d.\n", 4, 42));
+	printf("MY res %d\n", ft_printf(".%*u.\n", 9, 234));
+	printf("REEL %d\n\n", printf(".%*u.\n", 9, 234));
+	printf("MY res %d\n", ft_printf(".%*x.\n", 5, 234));
+	printf("REEL %d\n\n", printf(".%*x.\n", 5, 234));
+	printf("MY res %d\n", ft_printf(".%*X.\n", 0, 234));
+	printf("REEL %d\n\n", printf(".%*X.\n", 0, 234));
+	printf("MY res %d\n", ft_printf(".%*p.\n", 16, &line));
+	printf("REEL %d\n\n", printf(".%*p.\n", 16, &line));
+	printf("MY res %d\n", ft_printf(".%*c.\n", 8, 'c'));
+	printf("REEL %d\n\n", printf(".%*c.\n", 8, 'c'));
+	printf("MY res %d\n", ft_printf(".%%c.\n", 'a'));
+	printf("REEL %d\n\n", printf(".%%c.\n", 'a'));*/
+
+	printf("%s", "\n\n***************************** DIFF  FLAGS ***************************\n\n");
+	printf("MY res %d\n", ft_printf(".%*c--%-3d--%9d %.45s.\n", 9,'a', 42, 123, "coucouc hiboux coucou hibout !"));
+	printf("REEL %d\n\n", printf(".%*c--%-3d--%9d %.45s.\n", 9,'a', 42, 123, "coucouc hiboux coucou hibout !"));
+
     return (0);
 }
