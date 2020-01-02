@@ -115,5 +115,9 @@ int main()
 	printf("MY res %d\n", ft_printf(".%*c--%-3d--%9d %.45s.\n", 9,'a', 42, 123, "coucouc hiboux coucou hibout !"));
 	printf("REEL %d\n\n", printf(".%*c--%-3d--%9d %.45s.\n", 9,'a', 42, 123, "coucouc hiboux coucou hibout !"));
 
+	printf("hahahaha\n");
+	
+	printf("MY res %d\n", ft_printf("ft_printf = [%09d]\n", -213));
+	printf("REEL %d\n\n", printf(" printf = [%09d]\n", -213));
     return (0);
 }
