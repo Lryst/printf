@@ -5,55 +5,75 @@
 # include <stdio.h>
 # include <stdlib.h>
 
+typedef struct  t_flags
+{
+    int flags;
+    int nbr_f;
+    int p;
+    int nbr_p;
+    char conv;
+    int count_char;
+}				t_flags;
+
+t_flags	create_struct(t_flags *prt);
+
 int		ft_printf(const char *list, ...);
 
+t_flags	*ft_parse_conv(const char *str, int *i, t_flags *prt);
 void	ft_parse(const char *str, int *i, va_list args, int *count_char);
 
-void	ft_flag_right_space(const char *str, int *i, va_list args, int *count_char);
-void	ft_flag_left_zero(const char *str, int *i, va_list args, int *count_char);
-void	ft_flag_zero(const char *str, int *i, va_list args, int *count_char);
-void    ft_flags_left_space(const char *str, int *i, va_list args, int *count_char);
-void    ft_flag_stars(const char *str, int *i, va_list args, int *count_char);
+void	ft_putchar(char u);
+void	ft_putchar_c(char u, int *count_char);
+void	ft_putstr_c(char *str, int *count_char);
 
-void    ft_c_left_space(int nbr, va_list args, int *count_char);
-void    ft_c_right_space(int nbr, va_list args, int *count_char);
+void	ft_conv(t_flags *prt, int *count_char, va_list args);
 
-void	ft_u_left_space(int nbr, va_list args, int *count_char);
-void	ft_u_right_space(int nbr, va_list args, int *count_char);
-void	ft_u_left_zero(int nbr, va_list args, int *count_char);
+void	ft_just_flag(t_flags *prt, int *count_char, va_list args);
+void	ft_flags_m(t_flags *prt, int *count_char, va_list args);
+void	ft_flag_z(t_flags *prt, int *count_char, va_list args);
+void	ft_precision(t_flags *prt, int *count_char, va_list args);
 
-void    ft_s_left_space(int nbr, va_list args, int *count_char);
-void    ft_s_right_space(int nbr, va_list args, int *count_char);
-void    ft_s_left_zero(int nbr, va_list args, int *count_char);
+void    ft_x_left(t_flags *prt, char q, va_list args, int *count_char);
+void    ft_maj_x_left(t_flags *prt, char q, va_list args, int *count_char);
+void    ft_s_left_space(t_flags *prt, char q, va_list args, int *count_char);
+void    ft_s_left_zero(t_flags *prt, va_list args, int *count_char);
+void    ft_di_left(t_flags *prt, char q, va_list args, int *count_char);
+void	ft_u_left(t_flags *prt, char q, va_list args, int *count_char);
+void    ft_p_left(t_flags *prt, char q, va_list args, int *count_char);
+void    ft_c_left(t_flags *prt, char q, va_list args, int *count_char);
 
-void    ft_di_left_space(int nbr, va_list args, int *count_char);
-void    ft_di_right_space(int nbr, va_list args, int *count_char);
-void    ft_di_left_zero(int nbr, va_list args, int *count_char);
+void	ft_width(t_flags *prt, int *count_char, va_list args);
+void	ft_width_p(t_flags *prt, int *count_char, va_list args);
 
-void    ft_x_flags_space(int nbr, va_list args, int *count_char);
-void    ft_x_right_space(int nbr, va_list args, int *count_char);
-void    ft_x_left_zero(int nbr, va_list args, int *count);
+void	ft_putnbru(unsigned long int n, int *count_char);
+void	ft_putnbrdi(int n, int *count_char);
+void	ft_adres(unsigned long int nb, int *count_char);
+void	ft_putnbr_hexa(unsigned long int n, int *count_char);
+void	ft_putnbr_hexa_maj(unsigned long int n, int *count_char);
 
-void    ft_maj_x_left_space(int nbr, va_list args, int *count_char);
-void    ft_maj_x_right_space(int nbr, va_list args, int *count_char);
-void    ft_maj_x_left_zero(int nbr, va_list args, int *count_char);
+void	ft_full_flags(t_flags *ptr, int *count_char, va_list args);
 
-void    ft_p_left_space(int nbr, va_list args, int *count_char);
-void    ft_p_right_space(int nbr, va_list args, int *count_char);
+void	ft_check_struct(t_flags *prt, int *count_char, va_list args);
+
+int     ft_count_nbr(const char *str, int *i);
 
 int		ft_strlen(char *str);
 int		ft_unsigned_len(unsigned int nb);
 int		ft_intlen(int nb);
 int		ft_hexa_len(unsigned long int nb);
 
-void    ft_putchar(char u);
-void    ft_putchar_c(char u, int *count_char);
-void    ft_putstr_c(char *str, int *count_char);
+void    ft_s_right(t_flags *prt, va_list args, int *count_char);
+void    ft_di_right(t_flags *prt, va_list args, int *count_char);
+void    ft_c_right(t_flags *prt, va_list args, int *count_char);
+void    ft_x_right(t_flags *prt, va_list args, int *count_char);
+void	ft_u_right(t_flags *prt, va_list args, int *count_char);
+void    ft_p_right(t_flags *prt, va_list args, int *count_char);
+void    ft_maj_x_right(t_flags *prt, va_list args, int *count_char);
 
-void	ft_putnbr_hexa(unsigned long int n, int *count_char);
-void    ft_putnbrdi(int n, int *count_char);
-void    ft_putnbru(unsigned long int n, int *count_char);
-void	ft_putnbr_hexa_maj(unsigned long int n, int *count_char);
-void    ft_adres(unsigned long int nb, int *count_char);
+void    ft_di_left_p(t_flags *prt, char q, va_list args, int *count_char);
+void	ft_u_left_p(t_flags *prt, char q, va_list args, int *count_char);
+void    ft_s_left_zero_p(t_flags *prt, va_list args, int *count_char);
+void    ft_x_left_p(t_flags *prt, char q, va_list args, int *count_char);
+void    ft_maj_x_left_p(t_flags *prt, char q, va_list args, int *count_char);
 
 #endif

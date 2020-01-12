@@ -2,7 +2,7 @@
 
 void	ft_putchar(char u)
 {
-	write(1, &u ,1);
+	write(1, &u, 1);
 }
 
 void    ft_putchar_c(char u, int *count_char)

@@ -1,5 +1,18 @@
 #include "ft_printf.h"
 
+int	ft_count_nbr(const char *str, int *i)
+{
+	int nbr;
+	
+    nbr = 0;
+    while (str[*i] >= '0' && str[*i] <= '9')
+    {
+        nbr = nbr * 10 + (str[*i] - 48);
+        *i = *i + 1;
+    }
+	return (nbr);
+}
+
 int		ft_intlen(int nb)
 {
 	int		len;
