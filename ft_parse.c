@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	ft_just_flag(t_flags *prt, int *count_char, va_list args)
+void	ft_just_flag(t_flags *prt, size_t *count_char, va_list args)
 {
 	if (prt->flags == 1)
 		ft_flag_z(prt, count_char, args);
@@ -8,26 +8,20 @@ void	ft_just_flag(t_flags *prt, int *count_char, va_list args)
 		ft_flags_m(prt, count_char, args);
 }
 
-void	ft_check_struct(t_flags *prt, int *count_char, va_list args)
+void	ft_check_struct(t_flags *prt, size_t *count_char, va_list args)
 {
-	if (prt->conv != 0)
-	{
-		if (prt->p != 0)
-		{
-			if (prt->nbr_f != 0)
-			{
-				if (prt->flags != 0)
-					ft_full_flags(prt,count_char, args);
-				ft_width_p(prt, count_char, args);
-			}
-			ft_precision(prt, count_char, args);
-		}
-		if (prt->nbr_f >= 0 && prt->flags == 0)
-			ft_width(prt, count_char, args);
-		if (prt->flags != 0)
-			ft_just_flag(prt, count_char, args);
+	if (prt-> flags == 0 && prt->nbr_f == 0 && prt-> p == 0 && prt->nbr_p == 0&& prt->conv != 0)
 		ft_conv(prt, count_char, args);
-	}
+	if (prt-> flags != 0 && prt->nbr_f >= 0 && prt-> p == 0 && prt->nbr_p == 0 && prt->conv != 0)
+		ft_just_flag(prt, count_char, args);
+	if (prt-> flags == 0 && prt->nbr_f >= 0 && prt-> p != 0 && prt->nbr_p >= 0 && prt->conv != 0)
+		ft_width_p(prt, count_char, args);
+	if (prt-> flags == 0 && prt->nbr_f == 0 && prt-> p != 0 && prt->nbr_p >= 0 && prt->conv != 0)
+		ft_precision(prt, count_char, args);
+	if (prt-> flags == 0 && prt->nbr_f >= 0 && prt-> p == 0 && prt->nbr_p == 0 && prt->conv != 0)
+		ft_width(prt, count_char, args);
+	if (prt-> flags != 0 && prt->nbr_f >= 0 && prt-> p != 0 && prt->nbr_p >= 0 && prt->conv != 0)
+		ft_full_flags(prt, count_char, args);
 }
 
 t_flags	*ft_parse_conv(const char *str, int *i, t_flags *prt)
@@ -43,11 +37,11 @@ t_flags	*ft_parse_conv(const char *str, int *i, t_flags *prt)
 	return (prt);
 }
 
-void	ft_parse(const char *str, int *i, va_list args, int *count_char)
+void	ft_parse(const char *str, int *i, va_list args, size_t *count_char)
 {
 	t_flags prt;
 	
-	prt = create_struct(&prt);
+	prt = fill_struct(&prt);
 	*i = *i + 1;
 	while(str[*i] == '0' || str[*i] == '-')
     {
@@ -77,7 +71,6 @@ void	ft_parse(const char *str, int *i, va_list args, int *count_char)
 		str[*i] == '*' ? (prt.nbr_p = va_arg(args, int)) : (prt.nbr_p = ft_count_nbr(str, i));
 	}
 	ft_parse_conv(str, i, &prt);
-	printf("flags -> %i | nbr flags  -> %i | p -> %i | nbr p -> %i | conv -> %i\n", prt.flags, prt.nbr_f, prt.p, prt.nbr_p, prt.conv);
+	//printf("flags -> %i | nbr flags  -> %i | p -> %i | nbr p -> %i | conv -> %i\n", prt.flags, prt.nbr_f, prt.p, prt.nbr_p, prt.conv);
 	ft_check_struct(&prt, count_char, args);
-	printf(" la fin : %c\n", str[*i]);
 }

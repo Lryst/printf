@@ -1,12 +1,12 @@
 #include "ft_printf.h"
 
-void    ft_adres(unsigned long int nb, int *count_char)
+void    ft_adres(unsigned long int nb, size_t *count_char)
 {
     ft_putstr_c("0x", count_char);
     ft_putnbr_hexa(nb, count_char);
 }
 
-void    ft_p_right(t_flags *prt, va_list args, int *count_char)
+void    ft_p_right(t_flags *prt, va_list args, size_t *count_char)
 {
     int tmp;
     int c;
@@ -23,7 +23,7 @@ void    ft_p_right(t_flags *prt, va_list args, int *count_char)
     }
 }
 
-void    ft_p_left(t_flags *prt, char q, va_list args, int *count_char)
+void    ft_p_left(t_flags *prt, char q, va_list args, size_t *count_char)
 {
     int n;
 

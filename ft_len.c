@@ -13,21 +13,26 @@ int	ft_count_nbr(const char *str, int *i)
 	return (nbr);
 }
 
-int		ft_intlen(int nb)
+int		ft_intlen(int n)
 {
 	int		len;
 
+	if (n == 2147482647)
+		return (11);
 	len = 0;
-	if (nb < 0)
+	if (n == 0)
+		return (1);
+	if (n < 0)
 	{
-		nb = nb * -1;
+		n = -n;
 		len++;
 	}
-	while (nb > 0)
+	while (n)
 	{
-		nb = nb / 10;
+		n /= 10;
 		len++;
 	}
+	printf("\nINT SIZE  -> %u\n", len);
 	return (len);
 }
 
@@ -43,20 +48,17 @@ int        ft_strlen(char *str)
 
 int		ft_unsigned_len(unsigned int nb)
 {
-	unsigned long int		len;
+	size_t		size;
 
-	len = 0;
+	size = 1;
 	if (nb < 0)
-	{
-		nb = nb * -1;
-		len++;
-	}
-	while (nb > 0)
-	{
-		nb = nb / 10;
-		len++;
-	}
-	return (len);
+		size++;
+	while ((nb /= 10))
+		size++;
+	return (size);
+
+	printf("\nD -> %u\n", size);
+	return (size);
 }
 
 int		ft_hexa_len(unsigned long int nb)

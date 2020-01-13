@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void    ft_s_left_space(t_flags *prt, char q, va_list args, int *count_char)
+void    ft_s_left_space(t_flags *prt, char q, va_list args, size_t *count_char)
 {
     int n;
     int c;
@@ -17,14 +17,14 @@ void    ft_s_left_space(t_flags *prt, char q, va_list args, int *count_char)
     ft_putstr_c(s, count_char);
 }
 
-void    ft_s_right(t_flags *prt, va_list args, int *count_char)
+void    ft_s_right(t_flags *prt, va_list args, size_t *count_char)
 {
     ft_putstr_c(va_arg(args, char*), count_char);
     if (*count_char < (prt->nbr_f))
         *count_char = (prt->nbr_f);
 }
 
-void    ft_s_left_zero(t_flags *prt, va_list args, int *count_char)
+void    ft_s_left_zero(t_flags *prt, va_list args, size_t *count_char)
 {
     int u;
     char *s;
@@ -45,7 +45,7 @@ void    ft_s_left_zero(t_flags *prt, va_list args, int *count_char)
         ft_putstr_c(s, count_char);
 }
 
-void    ft_s_left_zero_p(t_flags *prt, va_list args, int *count_char)
+void    ft_s_left_zero_p(t_flags *prt, va_list args, size_t *count_char)
 {
     int u;
     char *s;

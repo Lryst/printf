@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	ft_flags_m(t_flags *prt, int *count_char, va_list args)
+void	ft_flags_m(t_flags *prt, size_t *count_char, va_list args)
 {
 	(prt->conv == 1 || prt->conv == 2) ? ft_di_right(prt, args, count_char) : 0;
 	prt->conv == 3 ? ft_u_right(prt, args, count_char) : 0;

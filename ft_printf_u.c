@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void    ft_putnbru(unsigned long int n, int *count_char)
+void    ft_putnbru(unsigned long int n, size_t *count_char)
 {
     if (n > 9)
     {
@@ -8,27 +8,31 @@ void    ft_putnbru(unsigned long int n, int *count_char)
         ft_putnbru(n % 10, count_char);
     }
     else
-        ft_putchar_c(n + 48, count_char);    
+        ft_putchar_c(n + 48, count_char);  
 }
 
-void	ft_u_left(t_flags *prt, char q, va_list args, int *count_char)
+void	ft_u_left(t_flags *prt, char q, va_list args, size_t *count_char)
 {
 	unsigned int u;
 	unsigned int c;
 	unsigned long int n;
+	unsigned long int i;
 
 	n = 0;
 	u = va_arg(args, unsigned int);
 	c = ft_unsigned_len(u);
-	while (n < ((unsigned long int)(prt->nbr_f) - c))
+	if ((prt->nbr_p) > c)
 	{
-		ft_putchar_c(q, count_char);
-		n++;
+		i = (prt->nbr_p) - c;
+		while (n++ < i)
+			ft_putchar_c(q, count_char);
 	}
+	printf("\nU -> %u\n", u);
+	printf("\nC -> %u\n", c);
 	ft_putnbru(u, count_char);
 }
 
-void	ft_u_right(t_flags *prt, va_list args, int *count_char)
+void	ft_u_right(t_flags *prt, va_list args, size_t *count_char)
 {
 	int u;
 	int c;
@@ -45,7 +49,7 @@ void	ft_u_right(t_flags *prt, va_list args, int *count_char)
 	}
 }
 
-void	ft_u_left_p(t_flags *prt, char q, va_list args, int *count_char)
+void	ft_u_left_p(t_flags *prt, char q, va_list args, size_t *count_char)
 {
 	unsigned int u;
 	unsigned int c;

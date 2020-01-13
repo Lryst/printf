@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void    ft_putnbrdi(int n, int *count_char)
+void    ft_putnbrdi(int n, size_t *count_char)
 {
     if (n == -2147483648)
     {
@@ -25,7 +25,7 @@ void    ft_putnbrdi(int n, int *count_char)
     }
 }
 
-void    ft_di_left(t_flags *prt, char q, va_list args, int *count_char)
+void    ft_di_left(t_flags *prt, char q, va_list args, size_t *count_char)
 {
     int u;
     int c;
@@ -47,7 +47,7 @@ void    ft_di_left(t_flags *prt, char q, va_list args, int *count_char)
     ft_putnbrdi(u, count_char);
 }
 
-void    ft_di_right(t_flags *prt, va_list args, int *count_char)
+void    ft_di_right(t_flags *prt, va_list args, size_t *count_char)
 {
     int u;
     int n;
@@ -64,7 +64,7 @@ void    ft_di_right(t_flags *prt, va_list args, int *count_char)
     }
 }
 
-void    ft_di_left_p(t_flags *prt, char q, va_list args, int *count_char)
+void    ft_di_left_p(t_flags *prt, char q, va_list args, size_t *count_char)
 {
     int u;
     int c;

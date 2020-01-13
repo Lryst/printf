@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	ft_putnbr_hexa(unsigned long int n, int *count_char)
+void	ft_putnbr_hexa(unsigned long int n, size_t *count_char)
 {
 	if (n > 15)
 	{
@@ -13,7 +13,7 @@ void	ft_putnbr_hexa(unsigned long int n, int *count_char)
 		ft_putchar_c(n - 10 + 'a', count_char);
 }
 
-void    ft_x_left(t_flags *prt, char q, va_list args, int *count_char)
+void    ft_x_left(t_flags *prt, char q, va_list args, size_t *count_char)
 {
     int u;
     int c;
@@ -30,7 +30,7 @@ void    ft_x_left(t_flags *prt, char q, va_list args, int *count_char)
     ft_putnbr_hexa(u, count_char);
 }
 
-void    ft_x_right(t_flags *prt, va_list args, int *count_char)
+void    ft_x_right(t_flags *prt, va_list args, size_t *count_char)
 {
     int tmp;
     int c;
@@ -47,7 +47,7 @@ void    ft_x_right(t_flags *prt, va_list args, int *count_char)
     }
 }
 
-void    ft_x_left_p(t_flags *prt, char q, va_list args, int *count_char)
+void    ft_x_left_p(t_flags *prt, char q, va_list args, size_t *count_char)
 {
     int u;
     int c;

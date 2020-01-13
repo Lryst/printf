@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	ft_full_flags(t_flags *prt, int *count_char, va_list args)
+void	ft_full_flags(t_flags *prt, size_t *count_char, va_list args)
 {
 	int n;
 
