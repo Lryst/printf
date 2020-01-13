@@ -21,14 +21,12 @@ void	ft_u_left(t_flags *prt, char q, va_list args, size_t *count_char)
 	n = 0;
 	u = va_arg(args, unsigned int);
 	c = ft_unsigned_len(u);
-	if ((prt->nbr_p) > c)
+	if ((prt->nbr_f) > c)
 	{
-		i = (prt->nbr_p) - c;
+		i = (prt->nbr_f) - c;
 		while (n++ < i)
 			ft_putchar_c(q, count_char);
 	}
-	printf("\nU -> %u\n", u);
-	printf("\nC -> %u\n", c);
 	ft_putnbru(u, count_char);
 }
 

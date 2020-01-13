@@ -3,9 +3,9 @@
 t_flags	fill_struct(t_flags *prt)
 {
     prt->flags = 0;
-    prt->nbr_f = 0;
+    prt->nbr_f = -1;
     prt->p = 0;
-    prt->nbr_p = 0;
+    prt->nbr_p = -1;
     prt->conv = 0;
 	return (*prt);
 }
@@ -22,7 +22,10 @@ int        ft_printf(const char *list, ...)
     while (list[i])
     {
         if (list[i] == '%')
+        {
+            //write(1, "\n--------DEBUT PRINTF-------\n", 30);
             ft_parse(list, &i, args, &count_char);
+        }
         else
         {
             count_char++;
@@ -30,6 +33,7 @@ int        ft_printf(const char *list, ...)
         }
         i++;
     }
+    //write(1, "\n---------FIN PRINTF--------\n\n", 31);
     va_end(args);
     return(count_char);
 }

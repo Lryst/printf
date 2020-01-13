@@ -32,7 +32,7 @@ int		ft_intlen(int n)
 		n /= 10;
 		len++;
 	}
-	printf("\nINT SIZE  -> %u\n", len);
+	//printf("\nINT SIZE  -> %u\n", len);
 	return (len);
 }
 

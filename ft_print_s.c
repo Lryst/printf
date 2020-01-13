@@ -19,9 +19,17 @@ void    ft_s_left_space(t_flags *prt, char q, va_list args, size_t *count_char)
 
 void    ft_s_right(t_flags *prt, va_list args, size_t *count_char)
 {
-    ft_putstr_c(va_arg(args, char*), count_char);
-    if (*count_char < (prt->nbr_f))
-        *count_char = (prt->nbr_f);
+    int i;
+    char *tmp;
+
+    tmp = va_arg(args, char*);
+    i = ft_strlen(tmp);
+    ft_putstr_c(tmp, count_char);
+    while (i < (prt->nbr_f))
+    {
+        ft_putchar_c(' ', count_char);
+        i++;
+    }
 }
 
 void    ft_s_left_zero(t_flags *prt, va_list args, size_t *count_char)

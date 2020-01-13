@@ -34,15 +34,15 @@ void    ft_di_left(t_flags *prt, char q, va_list args, size_t *count_char)
     n = 0;
     u = va_arg(args, int);
     c = ft_intlen(u);
-    if (u < 0)
-    {
-        ft_putchar_c('-', count_char);
-        u = u * (-1);
-    }
     while (n < ((prt->nbr_f) - c))
     {
         ft_putchar_c(q , count_char);
         n++;
+    }
+	if (u < 0)
+    {
+        ft_putchar_c('-', count_char);
+        u = u * (-1);
     }
     ft_putnbrdi(u, count_char);
 }
@@ -73,15 +73,36 @@ void    ft_di_left_p(t_flags *prt, char q, va_list args, size_t *count_char)
     n = 0;
     u = va_arg(args, int);
     c = ft_intlen(u);
-    if (u < 0)
-    {
-        ft_putchar_c('-', count_char);
-        u = u * (-1);
-    }
     while (n < ((prt->nbr_p) - c))
     {
+		if (u < 0)
+		{
+			ft_putchar_c('-', count_char);
+			u = u * (-1);
+		}
         ft_putchar_c(q , count_char);
         n++;
     }
     ft_putnbrdi(u, count_char);
+}
+
+void	ft_di_width_p(t_flags *prt, va_list args, int *count_char)
+{
+	int u;
+    int c;
+    int n;
+
+    n = 0;
+	u = va_arg(args, int);
+	c = ft_intlen(u);
+	if (u < 0)
+	{
+		while(n < ((prt->nbr_f) - (prt->nbr_p)))
+		{
+			
+		}
+	}
+	ft_di_left()
+	
+
 }
