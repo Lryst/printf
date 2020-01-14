@@ -49,10 +49,10 @@ int main()
 	ft_printf("MY res %d\n", ft_printf(".%.18X.\n", 890));
 	ft_printf("REEL %d\n\n", printf(".%.18X.\n", 890));
 	ft_printf("MY res %d\n", ft_printf(".%.60s.\n", "coucou hibout coucou hibout !"));
-	ft_printf("REEL %d\n\n", printf(".%.60s.\n", "coucou hibout coucou hibout !"));*/
+	ft_printf("REEL %d\n\n", printf(".%.60s.\n", "coucou hibout coucou hibout !"));
 	ft_printf("MY res %d\n", ft_printf(".%.9s.\n", "soir"));
 	ft_printf("REEL %d\n\n", printf(".%.9s.\n", "soir"));
-	/*ft_printf("%s", "\n\n*****************************   FLAGS ZERO ***************************\n\n");
+	ft_printf("%s", "\n\n*****************************   FLAGS ZERO ***************************\n\n");
 	ft_printf("MY res %d\n", ft_printf(".%04d.\n", 42));
 	ft_printf("REEL %d\n\n", printf(".%04d.\n", 42));
 	ft_printf("MY res %d\n", ft_printf(".%04i.\n", 42));
@@ -131,13 +131,25 @@ int main()
     //ft_printf("my %d\n", printf(".%-16.9d.", -42));
     //ft_printf("REEL %d\n", printf(".%-16.9d.", -42));
     //ft_printf("%d\n", ft_printf(".%p.", &line));
-    //ft_printf("%d\n", printf(".%p.", &line));*/
+    //ft_printf("%d\n", printf(".%p.", &line));
     ft_printf("my %d\n", ft_printf(".%16.4s.\n", "coucou"));
     ft_printf("REEL %d\n", printf(".%16.4s.\n", "coucou"));
-	ft_printf("my %d\n", ft_printf(".%16.9d.\n", 42));
-    ft_printf("REEL %d\n", printf(".%16.9d.\n", 42));
-	ft_printf("my %d\n", ft_printf(".%16.9d.\n", -42));
-    ft_printf("REEL %d\n", printf(".%16.9d.\n", -42));
+	ft_printf("my %d\n", ft_printf(".%.15s.\n", "coucou"));
+    ft_printf("REEL %d\n", printf(".%.15s.\n", "coucou"));
+	ft_printf("my %d\n", ft_printf(".%16.d.\n", 420));
+    ft_printf("REEL %d\n", printf(".%16.d.\n", 420));
+	ft_printf("my %d\n", ft_printf(".%16.1d.\n", -420));
+    ft_printf("REEL %d\n", printf(".%16.1d.\n", -420));
+	//ft_printf("my %d\n", ft_printf(".%16.4c.\n", 'c'));
+    ft_printf("REEL %d\n", printf(".%16.4c.\n", 'c'));
+	//ft_printf("my %d\n", ft_printf(".%16.4p.\n", &line));
+    ft_printf("REEL %d\n", printf(".%16.4p.\n", &line));
+	//ft_printf("my %d\n", ft_printf(".%16.9u.\n", 420));
+    ft_printf("REEL %d\n", printf(".%16.9u.\n", 420));
+	//ft_printf("my %d\n", ft_printf(".%16.1x.\n", -420));*/
+    printf("REEL %d\n", printf(".%16.10d.\n", -42));
+	/*//ft_printf("my %d\n", ft_printf(".%16.1X.\n", -420));
+    ft_printf("REEL %d\n", printf(".%16.1X.\n", -420));
 	
    
 	//ft_printf("MY res %d\n", ft_printf(".%u.", -34));
