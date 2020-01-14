@@ -79,6 +79,7 @@ void    ft_di_left_p(t_flags *prt, char q, va_list args, size_t *count_char)
 		{
 			ft_putchar_c('-', count_char);
 			u = u * (-1);
+			c = c- 1;
 		}
         ft_putchar_c(q , count_char);
         n++;
@@ -86,7 +87,7 @@ void    ft_di_left_p(t_flags *prt, char q, va_list args, size_t *count_char)
     ft_putnbrdi(u, count_char);
 }
 
-void	ft_di_width_p(t_flags *prt, va_list args, int *count_char)
+void	ft_di_width_p(t_flags *prt, va_list args, size_t *count_char)
 {
 	int len;
     int nbr;
@@ -94,32 +95,46 @@ void	ft_di_width_p(t_flags *prt, va_list args, int *count_char)
 
     i = 0;
     nbr = va_arg(args, int);
-    len = intlen(nbr);
+    len = ft_intlen(nbr);
+	//printf("%d\n", nbr);
     if (prt->nbr_p < len)
     {
         while (i++ < ((prt->nbr_f) - len))
             ft_putchar_c(' ', count_char);
-        ft_putnbrdi(nbr, count_char);
+
     }
     else if (prt->nbr_p > len)
     {
-        while(i < )
-        {
-            if (nbr < 0)
-            {
-                nbr = nbr * (-1);
-            }
-        }
-        while (i < ((prt->nbr_p) - len))
-        {
-            if (nbr < 0)
-            {
-                ft_putchar_c('-', count_char);
-                nbr = nbr * (-1);
-            }
-            ft_putchar_c('0' , count_char);
-            i++;
-        }
-        ft_putnbrdi(nbr, count_char);
+        if (nbr != 0)
+		{
+			if (nbr > 0)
+			{
+				i = 0;
+				while (i++ < ((prt->nbr_f - prt->nbr_p)))
+						ft_putchar_c(' ', count_char);
+						i = 0;
+				while (i < ((prt->nbr_p) - len))
+				{
+					ft_putchar_c('0' , count_char);
+					i++;
+				}
+			}
+			if (nbr < 0)
+			{
+				while (i++ < ((prt->nbr_f - prt->nbr_p) - 1))
+					ft_putchar_c(' ', count_char);
+				ft_putchar_c('-', count_char);
+				nbr = -nbr;
+				i = 0;
+				while (i < ((prt->nbr_p) - len + 1))
+				{
+					ft_putchar_c('0' , count_char);
+					i++;
+				}
+			}
+			
+		}
     }
+	//printf("%d\n", nbr);
+	ft_putnbrdi(nbr, count_char);
 }

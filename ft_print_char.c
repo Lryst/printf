@@ -16,9 +16,6 @@ void	ft_putstr_c(char *str, size_t *count_char)
 	int i;
 
 	i = ft_strlen(str);
-	//printf("count_char : %d\n", (int)count_char);
-	//printf("i : %d\n", i);
 	write(1, str, i);
 	*count_char = *count_char + i;
-	//printf("count_char : %d\n", (int)count_char);
 }

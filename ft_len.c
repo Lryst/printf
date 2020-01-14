@@ -32,7 +32,6 @@ int		ft_intlen(int n)
 		n /= 10;
 		len++;
 	}
-	//printf("\nINT SIZE  -> %u\n", len);
 	return (len);
 }
 
@@ -55,9 +54,6 @@ int		ft_unsigned_len(unsigned int nb)
 		size++;
 	while ((nb /= 10))
 		size++;
-	return (size);
-
-	printf("\nD -> %u\n", size);
 	return (size);
 }
 

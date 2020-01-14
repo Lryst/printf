@@ -147,7 +147,13 @@ int main()
 	//ft_printf("my %d\n", ft_printf(".%16.9u.\n", 420));
     ft_printf("REEL %d\n", printf(".%16.9u.\n", 420));
 	//ft_printf("my %d\n", ft_printf(".%16.1x.\n", -420));*/
-    printf("REEL %d\n", printf(".%16.10d.\n", -42));
+    //ft_printf("REEL %d\n", printf(".%16.1d.\n", -42));
+	//ft_printf("my %d\n", ft_printf(".%22.14x.\n", -1349420));
+	//ft_printf("REEL %d\n", printf(".%22.14x.\n", -1349420));
+	ft_printf("my %d\n", ft_printf(".%22.14s.\n", "coucou"));
+	ft_printf("REEL %d\n", printf(".%22.14s.\n", "coucou"));
+	ft_printf("my %d\n", ft_printf(".%.14s.\n", "coucou"));
+	ft_printf("REEL %d\n", printf(".%.14s.\n", "coucou"));
 	/*//ft_printf("my %d\n", ft_printf(".%16.1X.\n", -420));
     ft_printf("REEL %d\n", printf(".%16.1X.\n", -420));
 	

@@ -46,6 +46,12 @@ void    ft_c_left(t_flags *prt, char q, va_list args, size_t *count_char);
 void	ft_width(t_flags *prt, size_t *count_char, va_list args);
 void	ft_width_p(t_flags *prt, size_t *count_char, va_list args);
 
+void	ft_di_width_p(t_flags *prt, va_list args, size_t *count_char);
+void	ft_u_width_p(t_flags *prt, va_list args, size_t *count_char);
+void	ft_x_width_p(t_flags *prt, va_list args, size_t *count_char);
+void	ft_maj_x_width_p(t_flags *prt, va_list args, size_t *count_char);
+void	ft_s_width_p(t_flags *prt, va_list args, size_t *count_char);
+
 void	ft_putnbru(unsigned long int n, size_t *count_char);
 void	ft_putnbrdi(int n, size_t *count_char);
 void	ft_adres(unsigned long int nb, size_t *count_char);
