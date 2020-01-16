@@ -26,6 +26,7 @@ void	ft_putchar_c(char u, size_t *count_char);
 void	ft_check_str(va_list args, size_t *count_char);
 void	ft_putstr_c(char *str, size_t *count_char);
 void	ft_putstr_s(va_list args, size_t *count_char);
+char	*ft_strcpy(char *dst, char *src);
 
 void	ft_conv(t_flags *prt, size_t *count_char, va_list args);
 
@@ -52,7 +53,7 @@ void	ft_x_width_p(t_flags *prt, va_list args, size_t *count_char);
 void	ft_maj_x_width_p(t_flags *prt, va_list args, size_t *count_char);
 void	ft_s_width_p(t_flags *prt, va_list args, size_t *count_char);
 
-void	ft_putnbru(unsigned long int n, size_t *count_char);
+void	ft_putnbru(unsigned int n, size_t *count_char);
 void	ft_putnbrdi(int n, size_t *count_char);
 void	ft_adres(unsigned long int nb, size_t *count_char);
 void	ft_putnbr_hexa(unsigned long int n, size_t *count_char);

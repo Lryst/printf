@@ -62,6 +62,8 @@ int		ft_hexa_len(unsigned long int nb)
 	unsigned long int		len;
 
 	len = 0;
+	if (nb == 0)
+		len = 1;
 	if (nb < 0)
 	{
 		nb = nb * -1;

@@ -11,7 +11,6 @@ void	ft_full_flags(t_flags *prt, size_t *count_char, va_list args)
 	tmp = 0;
 	if (prt->flags == 2)
 	{
-		
 		ft_precision(prt, &u, args);
 		*count_char = *count_char + u;
 		if (u < ((unsigned long int)prt->nbr_f))
@@ -22,12 +21,15 @@ void	ft_full_flags(t_flags *prt, size_t *count_char, va_list args)
 	}
 	if (prt->flags == 1)
 	{
-		ft_precision(prt, &u, args);
-		*count_char = *count_char + u;
-		if ((prt->nbr_f > prt->nbr_p) && u < (unsigned long int)prt->nbr_f)
+		if (prt->nbr_f > prt->nbr_p)
 		{
-			while (u++ < (unsigned long int)prt->nbr_f)
-				ft_putchar_c('0', count_char);
+			(prt->conv == 1 || prt->conv == 2) ? ft_di_width_p(prt, args, count_char) : 0;
+			prt->conv == 3 ? ft_u_width_p(prt, args, count_char) : 0;
+			prt->conv == 4 ? ft_x_width_p(prt, args, count_char) : 0;
+			prt->conv == 5 ? ft_maj_x_width_p(prt, args, count_char) : 0;
+			prt->conv == 7 ? ft_s_width_p(prt, args, count_char) : 0;
 		}
+		else if (prt->nbr_f <= prt->nbr_p)
+			ft_precision(prt, count_char, args);
 	}
 }

@@ -100,6 +100,6 @@ void	ft_parse(const char *str, int *i, va_list args, size_t *count_char)
 		}
 	}
 	ft_parse_conv(str, i, &prt);
-	//printf("flags -> %i | nbr flags  -> %i | p -> %i | nbr p -> %i | conv -> %i\n", prt.flags, prt.nbr_f, prt.p, prt.nbr_p, prt.conv);
+	printf("flags -> %i | nbr flags  -> %i | p -> %i | nbr p -> %i | conv -> %i\n", prt.flags, prt.nbr_f, prt.p, prt.nbr_p, prt.conv);
 	ft_check_struct(&prt, count_char, args);
 }

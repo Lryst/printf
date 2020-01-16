@@ -27,7 +27,7 @@ int main()
 	char	*t = "0x12345678";
 	char	*u = "-0";
 
-	ft_printf(" --- Return : %d\n", ft_printf("Simple input test"));
+	/*ft_printf(" --- Return : %d\n", ft_printf("Simple input test"));
 	ft_printf(" --- Return : %d\n", ft_printf("%i, %d, %d, %d, %d, %s, %c, %d, %u, %x, %X", i, j, k, l, m, n, c, c, j, j, j)); //T2
 	ft_printf(" --- Return : %d\n", ft_printf("%0i, %0d, %0d, %0d, %0d, %0d", i, j, k, l, m, c)); //T3
 	ft_printf(" --- Return : %d\n", ft_printf("%1i, %1d, %1d, %1d, %1d, %1d", i, j, k, l, m, c)); //T4
@@ -123,10 +123,10 @@ int main()
 		ft_printf(" --- Return : %d\n", ft_printf("%.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X", a, i, a, i, a, i, a, j, a, j, a, j, a, k, a, k, a, k, a, l, a, l, a, l, a, m, a, m, a, m, a, c, a, c, a, c, a, d, a, d, a, d, a, e, a, e, a, e));
 		a++;
 	}
-	a = -1;
-	/*while(a < 5) //T257-346
+	a = 2;
+	while(a < 7) //T257-346
 	{
-		b = -1;
+		b = 1;
 		while (b < 5)
 		{
 			ft_printf(" --- Return : %d\n", ft_printf("%*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X", a, b, i, a, b, i, a, b, i, a, b, j, a, b, j, a, b, j, a, b, k, a, b, k, a, b, k, a, b, l, a, b, l, a, b, l, a, b, m, a, b, m, a, b, m, a, b, c, a, b, c, a, b, c, a, b, d, a, b, d, a, b, d, a, b, e, a, b, e, a, b, e));
@@ -167,6 +167,32 @@ int main()
 	ft_printf(" --- Return : %d\n", ft_printf("%c, %-c, %12c, %-3c, %-1c, %1c, %-2c, %-4c, %5c, %3c, %-*c, %-*c, %*c, %*c", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0));
 //	ft_printf(" --- Return : %d\n", ft_printf("%-2s, %-4s, %-2.4s, %-8.12s, %3s, %8s, %---2s, %.*s, %.0s, %.1s, %.2s, %.4s, %.8s", NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL));
 	ft_printf(" --- Return : %d\n", ft_printf("(null)"));
-	ft_printf(" --- Return : %d\n", ft_printf(""));*/
+	ft_printf(" --- Return : %d\n", ft_printf(""));
+	//ft_printf("%1.4s, %-6.8%, %4.2s", "tuuu", "12345", "hu");
+	//printf("\n");
+	//printf("%1.4s, %-6.8s, %4.2s", "tuuu", "12345", "hu");
+	printf("%.8%\n");
+	printf("%.1%\n");
+	printf("%.0%\n");
+	printf("%.%\n");
+	printf("%12%\n");
+	printf("%-4%\n");
+	printf("%017%\n");
+
+	printf("%.8c\n", 'b');
+	printf("%.1c\n", 'b');
+	printf("%.0c\n", 'b');
+	printf("%.c\n", 'b');
+	printf("%12c\n", 'b');
+	printf("%-4c\n", 'b');
+	printf("%017c\n", 'b');
+	//ft_printf("%8%\n");*/
+	a = 0;
+	b = -2;
+	printf(" --- Return : %d\n", printf("%0*.*i, %0*.*d, %0*.*d, %0*.*d, %0*.*d, %0*.*d", a, b, i, a, b, j, a, b, k, a, b, l, a, b, m, a, b, c));
+	ft_printf(" --- Return : %d\n", ft_printf("%0*.*i, %0*.*d, %0*.*d, %0*.*d, %0*.*d, %0*.*d", a, b, i, a, b, j, a, b, k, a, b, l, a, b, m, a, b, c));
+	printf(" --- Return : %d\n", printf("%*.*i, %*.*d, %*.*d, %*.*d, %*.*d, %*.*d", a, b, i, a, b, j, a, b, k, a, b, l, a, b, m, a, b, c));
+	ft_printf(" --- Return : %d\n", ft_printf("%*.*i, %*.*d, %*.*d, %*.*d, %*.*d, %*.*d", a, b, i, a, b, j, a, b, k, a, b, l, a, b, m, a, b, c));
+	
 }
 

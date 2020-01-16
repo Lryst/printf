@@ -33,14 +33,14 @@ void    ft_di_left(t_flags *prt, char q, va_list args, size_t *count_char)
     n = 0;
     u = va_arg(args, int);
     c = ft_intlen(u);
-    if (u == 0 && prt->nbr_f == 0)
+    if (u == 0 && prt->nbr_f == 0 && prt->p != 0)
     {
         n = 0;
         while(n++ < prt->nbr_f)
             ft_putchar_c(' ', count_char);
         return;
     }
-    if (u < 0)
+        if (u < 0 && prt->flags == 1)
     {
         ft_putchar_c('-', count_char);
         u = u * (-1);
@@ -50,7 +50,11 @@ void    ft_di_left(t_flags *prt, char q, va_list args, size_t *count_char)
         ft_putchar_c(q , count_char);
         n++;
     }
-	
+	if (u < 0 && prt->flags == 0)
+    {
+        ft_putchar_c('-', count_char);
+        u = u * (-1);
+    }
     ft_putnbrdi(u, count_char);
 }
 
@@ -132,7 +136,7 @@ void	ft_di_width_p(t_flags *prt, va_list args, size_t *count_char)
 				i = 0;
 				while (i++ < ((prt->nbr_f - prt->nbr_p)))
 						ft_putchar_c(' ', count_char);
-						i = 0;
+				i = 0;
 				while (i < ((prt->nbr_p) - len))
 				{
 					ft_putchar_c('0' , count_char);
@@ -155,6 +159,5 @@ void	ft_di_width_p(t_flags *prt, va_list args, size_t *count_char)
 			
 	
     }
-	//printf("%d\n", nbr);
 	ft_putnbrdi(nbr, count_char);
 }
