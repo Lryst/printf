@@ -23,7 +23,6 @@ int        ft_printf(const char *list, ...)
     {
         if (list[i] == '%')
         {
-            //write(1, "\n--------DEBUT PRINTF-------\n", 30);
             ft_parse(list, &i, args, &count_char);
         }
         else
@@ -33,7 +32,6 @@ int        ft_printf(const char *list, ...)
         }
         i++;
     }
-    //write(1, "\n---------FIN PRINTF--------\n\n", 31);
     va_end(args);
     return(count_char);
 }

@@ -32,7 +32,7 @@ void	ft_u_left(t_flags *prt, char q, va_list args, size_t *count_char)
 
 void	ft_u_right(t_flags *prt, va_list args, size_t *count_char)
 {
-	int u;
+	unsigned long int u;
 	int c;
 	int n;
 
@@ -56,10 +56,17 @@ void	ft_u_left_p(t_flags *prt, char q, va_list args, size_t *count_char)
 	n = 0;
 	u = va_arg(args, unsigned int);
 	c = ft_unsigned_len(u);
-	while (n < ((unsigned long int)(prt->nbr_p) - c))
+	if (u == 0 && prt->nbr_p == 0)
+    {
+        return;
+    }
+	if (u < (unsigned long int)prt->nbr_p)
 	{
-		ft_putchar_c(q, count_char);
-		n++;
+		while (n < ((unsigned long int)(prt->nbr_p) - c))
+		{
+			ft_putchar_c(q, count_char);
+			n++;
+		}
 	}
 	ft_putnbru(u, count_char);
 }

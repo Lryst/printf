@@ -22,10 +22,13 @@ void    ft_x_left(t_flags *prt, char q, va_list args, size_t *count_char)
     n = 0;
     u = va_arg(args, unsigned int);
     c = ft_hexa_len(u);
-    while (n + c < (prt->nbr_f))
+    if (c < prt->nbr_f)
     {
-        ft_putchar_c(q, count_char);
-        n++;
+        while (n + c < (prt->nbr_f))
+        {
+            ft_putchar_c(q, count_char);
+            n++;
+        }
     }
     ft_putnbr_hexa(u, count_char);
 }
@@ -56,10 +59,17 @@ void    ft_x_left_p(t_flags *prt, char q, va_list args, size_t *count_char)
     n = 0;
     u = va_arg(args, unsigned int);
     c = ft_hexa_len(u);
-    while (n + c < ((unsigned int)prt->nbr_p))
+    if (u == 0 && prt->nbr_p == 0)
     {
-        ft_putchar_c(q, count_char);
-        n++;
+        return;
+    }
+    if (u < (unsigned long int)prt->nbr_p)
+    {
+        while (n + c < ((unsigned int)prt->nbr_p))
+        {
+            ft_putchar_c(q, count_char);
+            n++;
+        }
     }
     ft_putnbr_hexa(u, count_char);
 }

@@ -59,15 +59,14 @@ void    ft_s_left_zero_p(t_flags *prt, va_list args, size_t *count_char)
     char *s;
     int c;
 
-    u = 0;
+    u = -1;
     s = va_arg(args, char*);
     c = ft_strlen(s);
-    if (c > (prt->nbr_p))
+    if (c >= (prt->nbr_p))
     {
-        while (u < (prt->nbr_p))
+        while (++u < (prt->nbr_p))
         {
             ft_putchar_c(s[u], count_char);
-            u++;
         }
     }
     else if (c < (prt->nbr_p))

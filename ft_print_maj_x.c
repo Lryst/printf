@@ -35,10 +35,12 @@ void    ft_maj_x_right(t_flags *prt, va_list args, size_t *count_char)
     int tmp;
     int c;
     int n;
+    unsigned long int nbr;
 
     n = 0;
     tmp = *count_char;
-    ft_putnbr_hexa_maj(va_arg(args, unsigned long int), count_char);
+    nbr = va_arg(args, unsigned long int);
+    ft_putnbr_hexa_maj(nbr, count_char);
     c = *count_char - tmp;
     while (n + c < (prt->nbr_f))
     {
@@ -56,10 +58,17 @@ void    ft_maj_x_left_p(t_flags *prt, char q, va_list args, size_t *count_char)
     n = 0;
     u = va_arg(args, unsigned long int);
     c = ft_hexa_len(u);
-    while (n + c < (unsigned long int)(prt->nbr_p))
+    if (u == 0 && prt->nbr_p == 0)
     {
-        ft_putchar_c(q , count_char);
-        n++;
+        return;
+    }
+    if (u < (unsigned long int)prt->nbr_p)
+    {
+        while (n + c < (unsigned long int)(prt->nbr_p))
+        {
+            ft_putchar_c(q , count_char);
+            n++;
+        }
     }
     ft_putnbr_hexa_maj(u, count_char);
 }
