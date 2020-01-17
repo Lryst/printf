@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	ft_putnbr_hexa_maj(unsigned long int n, size_t *count_char)
+void	ft_putnbr_hexa_maj(unsigned int n, size_t *count_char)
 {
 	if (n > 15)
 	{
@@ -17,7 +17,7 @@ void    ft_maj_x_left(t_flags *prt, char q, va_list args, size_t *count_char)
 {
     int n;
     int c;
-    unsigned long int u;
+    unsigned int u;
 
     n = 0;
     u = va_arg(args, unsigned int);
@@ -41,7 +41,7 @@ void    ft_maj_x_right(t_flags *prt, va_list args, size_t *count_char)
 {
     int tmp;
     int c;
-    unsigned long int n;
+    unsigned int n;
 
     n = 0;
     tmp = *count_char;
@@ -56,9 +56,9 @@ void    ft_maj_x_right(t_flags *prt, va_list args, size_t *count_char)
 
 void    ft_maj_x_left_p(t_flags *prt, char q, va_list args, size_t *count_char)
 {
-    unsigned long int u;
+    unsigned int u;
     int c;
-    unsigned long int n;
+    unsigned int n;
 
     n = 0;
     u = va_arg(args, unsigned int);
@@ -82,7 +82,7 @@ void	ft_maj_x_width_p(t_flags *prt, va_list args, size_t *count_char)
 {
 	int i;
     int len;
-    unsigned long int nbr;
+    unsigned int nbr;
 
     i = 0;
     nbr = va_arg(args, unsigned int);

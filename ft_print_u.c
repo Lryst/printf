@@ -36,7 +36,7 @@ void	ft_u_left(t_flags *prt, char q, va_list args, size_t *count_char)
 
 void	ft_u_right(t_flags *prt, va_list args, size_t *count_char)
 {
-	unsigned long int u;
+	unsigned int u;
 	int c;
 	int n;
 
@@ -55,7 +55,7 @@ void	ft_u_left_p(t_flags *prt, char q, va_list args, size_t *count_char)
 {
 	unsigned int u;
 	unsigned int c;
-	unsigned long int n;
+	unsigned int n;
 
 	n = 0;
 	u = va_arg(args, unsigned int);
@@ -67,7 +67,7 @@ void	ft_u_left_p(t_flags *prt, char q, va_list args, size_t *count_char)
 	if (c < (unsigned int)prt->nbr_p)
 	{
 		
-		while (n < ((unsigned long int)(prt->nbr_p) - c))
+		while (n < ((unsigned int)(prt->nbr_p) - c))
 		{
 			
 			ft_putchar_c(q, count_char);
@@ -80,11 +80,11 @@ void	ft_u_left_p(t_flags *prt, char q, va_list args, size_t *count_char)
 void	ft_u_width_p(t_flags *prt, va_list args, size_t *count_char)
 {
 	int len;
-    unsigned long int nbr;
+    unsigned int nbr;
     int i;
 
     i = 0;
-    nbr = va_arg(args, unsigned long int);
+    nbr = va_arg(args, unsigned int);
     len = ft_unsigned_len(nbr);
 	if (nbr == 0 && prt->nbr_p == 0)
     {

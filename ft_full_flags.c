@@ -13,9 +13,9 @@ void	ft_full_flags(t_flags *prt, size_t *count_char, va_list args)
 	{
 		ft_precision(prt, &u, args);
 		*count_char = *count_char + u;
-		if (u < ((unsigned long int)prt->nbr_f))
+		if (u < ((unsigned int)prt->nbr_f))
 		{
-			while (u++ < (unsigned long int)prt->nbr_f)
+			while (u++ < (unsigned int)prt->nbr_f)
 				ft_putchar_c(' ', count_char);
 		}
 	}
