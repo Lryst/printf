@@ -26,7 +26,6 @@ void	ft_putchar_c(char u, size_t *count_char);
 void	ft_check_str(va_list args, size_t *count_char);
 void	ft_putstr_c(char *str, size_t *count_char);
 void	ft_putstr_s(va_list args, size_t *count_char);
-char	*ft_strcpy(char *dst, char *src);
 
 void	ft_conv(t_flags *prt, size_t *count_char, va_list args);
 
@@ -69,6 +68,8 @@ int		ft_strlen(char *str);
 int		ft_unsigned_len(unsigned int nb);
 int		ft_intlen(int nb);
 int		ft_hexa_len(unsigned long int nb);
+
+void	ft_s_left_wp(t_flags *prt, va_list args, size_t *count_char);
 
 void    ft_s_right(t_flags *prt, va_list args, size_t *count_char);
 void    ft_di_right(t_flags *prt, va_list args, size_t *count_char);

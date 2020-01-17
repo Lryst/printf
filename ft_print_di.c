@@ -33,7 +33,7 @@ void    ft_di_left(t_flags *prt, char q, va_list args, size_t *count_char)
     n = 0;
     u = va_arg(args, int);
     c = ft_intlen(u);
-    if (u == 0 && prt->nbr_f == 0 && prt->p != 0)
+    if (u == 0 && prt->nbr_f == 0 && prt->p != 0 && prt->nbr_p == 0)
     {
         n = 0;
         while(n++ < prt->nbr_f)
@@ -129,9 +129,9 @@ void	ft_di_width_p(t_flags *prt, va_list args, size_t *count_char)
         while (i++ < ((prt->nbr_f) - len))
             ft_putchar_c(' ', count_char);
     }
-    else if (prt->nbr_p > len)
+    else if (prt->nbr_p >= len)
     {
-			if (nbr > 0)
+			if (nbr >= 0)
 			{
 				i = 0;
 				while (i++ < ((prt->nbr_f - prt->nbr_p)))

@@ -10,20 +10,17 @@ void    ft_s_left_space(t_flags *prt, char q, va_list args, size_t *count_char)
     str = va_arg(args, char*);
     if (str == NULL)
 	{
-        while (i
- < ((prt->nbr_f) - 6))
+        while (i < ((prt->nbr_f) - 6))
         {
             ft_putchar_c(q , count_char);
-            i
-	++;
+            i++;
         }
         ft_putstr_c("(null)", count_char);
 	}
 	if (str != NULL)
 	{
 		len = ft_strlen(str);
-		while (i
-++ < ((prt->nbr_f) - len))
+		while (i++ < ((prt->nbr_f) - len))
 			ft_putchar_c(q , count_char);
 		ft_putstr_c(str, count_char);
 	}
@@ -95,15 +92,17 @@ void    ft_s_left_zero_p(t_flags *prt, va_list args, size_t *count_char)
 	else
 	{
 		c = ft_strlen(s);
-		if (c >= (prt->nbr_p))
+		if (c > (prt->nbr_p))
 		{
 			while (++u < (prt->nbr_p))
 			{
 				ft_putchar_c(s[u], count_char);
 			}
 		}
-		else if (c < (prt->nbr_p))
+		else if (c <= (prt->nbr_p))
+		{
 			ft_putstr_c(s, count_char);
+		}			
 	}
 }
 
@@ -160,5 +159,61 @@ void	ft_s_width_p(t_flags *prt, va_list args, size_t *count_char)
 				ft_putchar_c(' ' , count_char);
 			ft_putstr_c(null, count_char);
 		}	
+	}
+}
+
+void	ft_s_left_wp(t_flags *prt, va_list args, size_t *count_char)
+{
+	char *str;
+	int len;
+	int i;
+	char null[6] = "(null)";
+
+	i = -1;
+	len = 0;
+	str = va_arg(args, char *);
+	if (str == NULL)
+	{
+		if (6 >= (prt->nbr_p))
+		{
+			while (++i < (prt->nbr_p))
+				ft_putchar_c(null[i], count_char);
+		}
+		else if (6 < (prt->nbr_p))
+		{
+			if (6 < prt->nbr_f)
+			{
+				while (++i < (prt->nbr_f - len))
+				ft_putchar_c(' ', count_char);
+			}
+			ft_putstr_c(null, count_char);
+		}
+	}
+	else
+	{
+		len = ft_strlen(str);
+		if (len >= (prt->nbr_p))
+		{
+			i = -1;
+			if (len <= prt->nbr_f)
+			{
+				while (++i < (prt->nbr_f - len))
+				ft_putchar_c(' ', count_char);
+			}
+			i = -1;
+			while (++i < (prt->nbr_p))
+			{
+				ft_putchar_c(str[i], count_char);
+			}
+		}
+		else if (len < (prt->nbr_p))
+		{
+			if (len <= prt->nbr_f)
+			{
+				while (++i < (prt->nbr_f - len))
+				ft_putchar_c(' ', count_char);
+			}
+			ft_putstr_c(str, count_char);
+		}
 	}
 }

@@ -99,7 +99,6 @@ void	ft_u_width_p(t_flags *prt, va_list args, size_t *count_char)
 	{
 		if (prt->nbr_p < len)
 		{
-			
 			while (i++ < ((prt->nbr_f) - len))
 				ft_putchar_c(' ', count_char);
 		}
