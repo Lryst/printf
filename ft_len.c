@@ -4,16 +4,16 @@ int	ft_count_nbr(const char *str, int *i)
 {
 	int nbr;
 	
-    nbr = 0;
-    while (str[*i] >= '0' && str[*i] <= '9')
-    {
-        nbr = nbr * 10 + (str[*i] - 48);
-        *i = *i + 1;
-    }
+	nbr = 0;
+	while (str[*i] >= '0' && str[*i] <= '9')
+	{
+		nbr = nbr * 10 + (str[*i] - 48);
+		*i = *i + 1;
+	}
 	return (nbr);
 }
 
-int		ft_intlen(int n)
+int	ft_intlen(int n)
 {
 	int		len;
 
@@ -35,17 +35,17 @@ int		ft_intlen(int n)
 	return (len);
 }
 
-int        ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-    int i;
+	int i;
 
-    i = 0;
-    while (str[i])
-        i++;
-    return(i);
+	i = 0;
+	while (str[i])
+		i++;
+	return(i);
 }
 
-int		ft_unsigned_len(unsigned int nb)
+int	ft_unsigned_len(unsigned int nb)
 {
 	size_t		size;
 
@@ -57,7 +57,7 @@ int		ft_unsigned_len(unsigned int nb)
 	return (size);
 }
 
-int		ft_hexa_len(unsigned int nb)
+int	ft_hexa_len(unsigned int nb)
 {
 	unsigned int		len;
 

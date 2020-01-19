@@ -1,12 +1,13 @@
 #include "ft_printf.h"
 
-t_flags	fill_struct(t_flags *prt)
+t_flags	fill_struct(t_flags *prt, int *i)
 {
     prt->flags = 0;
     prt->nbr_f = -1;
     prt->p = 0;
     prt->nbr_p = -1;
     prt->conv = 0;
+    *i = *i + 1;
 	return (*prt);
 }
 

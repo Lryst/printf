@@ -27,7 +27,12 @@ SRCS =	ft_conv.c\
 		ft_print_x.c\
 		ft_printf.c\
 		ft_widths.c\
-		ft_percent.c
+		ft_percent.c\
+		ft_check_struct.c\
+		ft_print_nbr.c\
+		ft_s_left_wp.c\
+		ft_s_left_zero_p.c\
+		ft_s_width_p.c
 
 OBJS = $(SRCS:.c=.o)
 

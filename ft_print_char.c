@@ -1,13 +1,20 @@
 #include "ft_printf.h"
 
+int		*ft_print_m(int *u, size_t *count_char)
+{
+	ft_putchar_c('-', count_char);
+	*u = *u * (-1);
+	return (u);
+}
+
 void	ft_putchar(char u)
 {
 	write(1, &u, 1);
 }
 
-void    ft_putchar_c(char u, size_t *count_char)
+void	ft_putchar_c(char u, size_t *count_char)
 {
-    write(1, &u, 1);
+	write(1, &u, 1);
 	*count_char = *count_char + 1;
 }
 

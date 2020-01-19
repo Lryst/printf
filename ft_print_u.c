@@ -22,9 +22,7 @@ void	ft_u_left(t_flags *prt, char q, va_list args, size_t *count_char)
 	u = va_arg(args, unsigned int);
 	c = ft_unsigned_len(u);
 	if (u == 0 && prt->nbr_p == 0)
-    {
         return;
-    }
 	if ((unsigned int)(prt->nbr_f) > c)
 	{
 		i = (prt->nbr_f) - c;
@@ -44,11 +42,8 @@ void	ft_u_right(t_flags *prt, va_list args, size_t *count_char)
 	u = va_arg(args, unsigned int);
 	c = ft_unsigned_len(u);
 	ft_putnbru(u, count_char);
-	while (n < ((prt->nbr_f) - c))
-	{
+	while (n++ < ((prt->nbr_f) - c))
 		ft_putchar_c(' ', count_char);
-		n++;
-	}
 }
 
 void	ft_u_left_p(t_flags *prt, char q, va_list args, size_t *count_char)
@@ -61,20 +56,34 @@ void	ft_u_left_p(t_flags *prt, char q, va_list args, size_t *count_char)
 	u = va_arg(args, unsigned int);
 	c = ft_unsigned_len(u);
 	if (u == 0 && prt->nbr_p == 0)
-    {
         return;
-    }
 	if (c < (unsigned int)prt->nbr_p)
 	{
 		
-		while (n < ((unsigned int)(prt->nbr_p) - c))
-		{
-			
+		while (n++ < ((unsigned int)(prt->nbr_p) - c))
 			ft_putchar_c(q, count_char);
-			n++;
-		}
 	}
 	ft_putnbru(u, count_char);
+}
+
+void	ft_u_width_p2(t_flags *prt, int len, size_t *count_char)
+{
+	int i;
+
+	i = 0;
+	if (prt->nbr_p < len)
+	{
+		while (i++ < ((prt->nbr_f) - len))
+			ft_putchar_c(' ', count_char);
+	}
+	else if (prt->nbr_p >= len)
+	{
+		while (i++ < ((prt->nbr_f - prt->nbr_p)))
+			ft_putchar_c(' ', count_char);
+		i = 0;
+		while (i++ < ((prt->nbr_p) - len))
+			ft_putchar_c('0' , count_char);
+	}
 }
 
 void	ft_u_width_p(t_flags *prt, va_list args, size_t *count_char)
@@ -88,29 +97,11 @@ void	ft_u_width_p(t_flags *prt, va_list args, size_t *count_char)
     len = ft_unsigned_len(nbr);
 	if (nbr == 0 && prt->nbr_p == 0)
     {
-        i = 0;
         while(i++ < prt->nbr_f)
-		{
             ft_putchar_c(' ', count_char);
-		}
         return;
     }
 	if (prt->nbr_f > 0)
-	{
-		if (prt->nbr_p < len)
-		{
-			while (i++ < ((prt->nbr_f) - len))
-				ft_putchar_c(' ', count_char);
-		}
-		else if (prt->nbr_p >= len)
-		{
-			i = 0;
-			while (i++ < ((prt->nbr_f - prt->nbr_p)))
-				ft_putchar_c(' ', count_char);
-			i = 0;
-			while (i++ < ((prt->nbr_p) - len))
-				ft_putchar_c('0' , count_char);
-		}
-	}
+		ft_u_width_p2(prt, len, count_char);
 	ft_putnbru(nbr, count_char);
 }
