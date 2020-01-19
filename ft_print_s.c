@@ -87,7 +87,7 @@ void    ft_s_left_zero_p(t_flags *prt, va_list args, size_t *count_char)
 				ft_putchar_c(null[u], count_char);
 		}
 		else if (6 < (prt->nbr_p))
-			ft_putstr_c(null, count_char);
+			ft_putstr_c("(null)", count_char);
 	}
 	else
 	{

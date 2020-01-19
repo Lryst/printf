@@ -54,9 +54,11 @@ void	ft_s_width_p(t_flags *prt, va_list args, size_t *count_char);
 
 void	ft_putnbru(unsigned int n, size_t *count_char);
 void	ft_putnbrdi(int n, size_t *count_char);
-void	ft_adres(unsigned int nb, size_t *count_char);
+void	ft_adres(unsigned long long nb, size_t *count_char);
 void	ft_putnbr_hexa(unsigned int n, size_t *count_char);
 void	ft_putnbr_hexa_maj(unsigned int n, size_t *count_char);
+void	ft_putnbr_p(unsigned long long n, size_t *count_char);
+int		ft_p_len(unsigned long long nb);
 
 void	ft_full_flags(t_flags *ptr, size_t *count_char, va_list args);
 
@@ -70,6 +72,9 @@ int		ft_intlen(int nb);
 int		ft_hexa_len(unsigned int nb);
 
 void	ft_s_left_wp(t_flags *prt, va_list args, size_t *count_char);
+
+void    ft_percent_left(t_flags *prt, char q, size_t *count_char);
+void    ft_percent_right(t_flags *prt, size_t *count_char);
 
 void    ft_s_right(t_flags *prt, va_list args, size_t *count_char);
 void    ft_di_right(t_flags *prt, va_list args, size_t *count_char);

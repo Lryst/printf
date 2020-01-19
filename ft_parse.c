@@ -43,6 +43,7 @@ t_flags	*ft_parse_conv(const char *str, int *i, t_flags *prt)
     str[*i] == 'p' ? prt->conv = 6 : 0;
     str[*i] == 's' ? prt->conv = 7 : 0;
     str[*i] == 'c' ? prt->conv = 8 : 0;
+	str[*i] == '%' ? prt->conv = 9 : 0;
 	return (prt);
 }
 
@@ -100,7 +101,6 @@ void	ft_parse(const char *str, int *i, va_list args, size_t *count_char)
 		}
 	}
 	ft_parse_conv(str, i, &prt);
-	str[*i] == '%' ? ft_putchar_c('%', count_char) : 0;
 	//printf("flags -> %i | nbr flags  -> %i | p -> %i | nbr p -> %i | conv -> %i\n", prt.flags, prt.nbr_f, prt.p, prt.nbr_p, prt.conv);
 	ft_check_struct(&prt, count_char, args);
 }

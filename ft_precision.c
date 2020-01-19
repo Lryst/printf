@@ -7,4 +7,5 @@ void	ft_precision(t_flags *prt, size_t *count_char, va_list args)
 	prt->conv == 4 ? ft_x_left_p(prt, '0',args, count_char) : 0;
 	prt->conv == 5 ? ft_maj_x_left_p(prt, '0',args, count_char) : 0;
 	prt->conv == 7 ? ft_s_left_zero_p(prt, args, count_char) : 0;
+	prt->conv == 9 ? ft_putchar_c('%', count_char) : 0;
 }

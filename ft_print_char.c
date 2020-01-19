@@ -8,7 +8,7 @@ void	ft_putchar(char u)
 void    ft_putchar_c(char u, size_t *count_char)
 {
     write(1, &u, 1);
-	*count_char = *count_char +1;
+	*count_char = *count_char + 1;
 }
 
 void	ft_putstr_c(char *str, size_t *count_char)
@@ -20,7 +20,7 @@ void	ft_putstr_c(char *str, size_t *count_char)
 		ft_putstr_c("(null)", count_char);
 		return;
 	}
-	i = ft_strlen(str);	
+	i = ft_strlen(str);
 	write(1, str, i);
 	*count_char = *count_char + i;
 }

@@ -9,6 +9,7 @@ void	ft_width(t_flags *prt, size_t *count_char, va_list args)
 	prt->conv == 6 ? ft_p_left(prt, ' ', args, count_char) : 0;
 	prt->conv == 7 ? ft_s_left_space(prt, ' ', args, count_char) : 0;
 	prt->conv == 8 ? ft_c_left(prt, ' ', args, count_char) : 0;
+	prt->conv == 9 ? ft_percent_left(prt, ' ', count_char) : 0;
 }
 
 void	ft_width_p(t_flags *prt, size_t *count_char, va_list args)

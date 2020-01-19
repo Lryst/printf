@@ -9,4 +9,5 @@ void	ft_flags_m(t_flags *prt, size_t *count_char, va_list args)
 	prt->conv == 6 ? ft_p_right(prt, args, count_char) : 0;
 	prt->conv == 7 ? ft_s_right(prt, args, count_char) : 0;
     prt->conv == 8 ? ft_c_right(prt, args, count_char) : 0;
+	prt->conv == 9 ? ft_percent_right(prt, count_char) : 0;
 }
